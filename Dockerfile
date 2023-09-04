@@ -15,5 +15,10 @@ WORKDIR /app
 # 将Dockerfile所在目录中的所有文件复制到容器的工作目录中
 COPY . .
 
+# 添加执行权限给entrypoint.sh文件
+RUN chmod +x entrypoint.sh
+    chmod +x index.js
+    chmod +x package.json
+
 # 定义容器启动时执行的命令
 ENTRYPOINT ["./entrypoint.sh"]
